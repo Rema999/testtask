@@ -1,0 +1,121 @@
+& when (@media-common = true) {
+    .testtask-index-display {
+        .page-wrapper {
+            .page-title-wrapper {
+                text-align: center;
+
+                .page-title {
+                    .base {
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            .main {
+                .lib-vendor-prefix-display();
+                .lib-css(flex-direction, column, 1);
+                .lib-vendor-box-align(center);
+                position: relative;
+                text-align: center;
+                min-height: 100%;
+                padding-bottom:0;
+                .main-h1 {
+                 font-weight: @font-weight__bold;
+                }
+                .main-h2 {
+                    font-size: 15px;
+                    margin: 0;
+                    color: @color-black;
+                    font-weight: @font-weight__bold;
+                }
+
+                .connect {
+                    display: none;
+                    img {
+                        height: 300px;
+                        position: absolute;
+                        left: 0px;
+                        top: 40px;
+                    }
+                }
+
+                .main-p {
+                    .lib-font-size(19);
+                    max-width: 730px;
+                    margin: 0 0 15px 0;
+                    padding: 0 15px;
+                }
+
+                .social {
+                    .social-ul {
+                        margin: 0;
+                        .lib-vendor-prefix-display();
+                        .lib-vendor-box-align(center);
+                        padding: 0;
+                        list-style: none;
+
+                        img {
+                            width: 200px;
+                        }
+
+                        .twitter {
+                            .lib-icon-font(
+                                @icon-twitter,
+                                @_icon-font: @font-family__porto-icons,
+                                @_icon-font-size: 50px,
+                                @_icon-font-margin: 0 4px 3px 0,
+                                @_icon-font-color: @color-light-green
+                            );
+                        }
+
+                        .facebook {
+                            .lib-icon-font(
+                                @icon-facebook,
+                                @_icon-font: @font-family__porto-icons,
+                                @_icon-font-size: 50px,
+                                @_icon-font-margin: 0 4px 3px 0,
+                                @_icon-font-color: @color-light-green
+                            );
+                        }
+                    }
+
+                    .social-li {
+                        margin: 0;
+                        .lib-font-size(45);
+
+                        &:nth-child(2) {
+                            padding: 0 @indent__xs 0 15px;
+                        }
+
+                        a {
+                            color: @color-light-green;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+    .testtask-index-display {
+        .page-wrapper {
+            .main {
+                .connect{
+                    display: block;
+                }
+            }
+        }
+
+    }
+}

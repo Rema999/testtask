@@ -1,0 +1,216 @@
+//.lib-vendor-prefix-display();
+//.lib-vendor-box-align(); //stretch
+//.lib-vendor-prefix-flex-wrap(); //wrap
+//.lib-vendor-prefix-flex-direction(); //column
+//.lib-font-size();
+//@font-weight__bold
+
+& when (@media-common = true) {
+    .testtask-index-display {
+        .page-wrapper {
+            .page-footer {
+                margin-top: 0;
+                background-color: @color-grey;
+
+                .content {
+                    .lib-vendor-prefix-display();
+                    .lib-css(flex-direction, row-reverse, 1);
+                    .lib-css(flex-wrap, wrap, 1);
+
+                    .footer-ul {
+                        padding: 0;
+                        min-width: 250px;
+                        margin-top: @indent__s;
+
+                        .telephone {
+                            .lib-icon-font(
+                                @icon-telephone,
+                                @_icon-font: @font-family__porto-icons,
+                                @_icon-font-size: 14px,
+                                @_icon-font-margin: 0 4px 3px 0
+                            );
+                        }
+
+                        .footer-li {
+                            color: @color-white;
+
+                            &:nth-child(1) {
+                                .lib-font-size(15px);
+                                font-weight: bold;
+                                padding-bottom: 15px;
+                                text-transform: uppercase;
+                            }
+
+                            a {
+                                color: @color-white;
+                            }
+
+                            .mail {
+                                .lib-icon-font(
+                                    @icon-mail,
+                                    @_icon-font: @font-family__porto-icons,
+                                    @_icon-font-size: 14px,
+                                    @_icon-font-margin: 0 5px 3px 0,
+                                    @_icon-font-color: @color-light-grey
+                                );
+                            }
+                        }
+                    }
+
+                    .block {
+                        .lib-vendor-prefix-display();
+                        .lib-css(justify-content, center, 1);
+                        width: 25%;
+                        min-width: 250px;
+                        padding-top: @indent__s;
+
+                        .content {
+                            .newsletter-ul {
+                                .newsletter-li {
+                                    color: @color-white;
+
+                                    &:nth-child(1) {
+                                        .lib-font-size(15px);
+                                        font-weight: @font-weight__bold;
+                                        padding-bottom: 15px;
+                                    }
+
+                                    .control {
+                                        &:before {
+                                            display: none;
+                                        }
+
+                                        label {
+                                            position: relative;
+
+                                            .mail {
+                                                position: absolute;
+                                                top: -1px;
+                                                right: 10px;
+                                                .lib-icon-font(
+                                                    @icon-air,
+                                                    @_icon-font: @font-family__porto-icons,
+                                                    @_icon-font-size: 14px,
+                                                    @_icon-font-margin: 0 0 3px 0,
+                                                    @_icon-font-color: @color-white,
+                                                    @_icon-font-position:after
+                                                );
+                                            }
+                                        }
+
+                                        input {
+                                            &::placeholder {
+                                                color: @color-nav;
+                                            }
+
+                                            width: 250px;
+                                            background-color: inherit;
+                                            border: @border-width__base solid @color-light-green;
+                                            border-radius: 5px;
+                                            margin: 10px 0 0 0;
+                                            padding-left: @indent__xs;
+                                        }
+                                    }
+                                }
+
+                                .newsletter-social {
+                                    .lib-vendor-prefix-display();
+                                    .lib-vendor-box-align(center);
+
+                                    img {
+                                        width: 130px;
+                                        padding-right: @indent__s;
+                                    }
+
+                                    .facebook {
+                                        height: 35px;
+                                        color: @color-white;
+                                        padding-right: @indent__s;
+                                        .lib-icon-font(
+                                            @icon-facebook,
+                                            @_icon-font: @font-family__porto-icons,
+                                            @_icon-font-size: 30px,
+                                            @_icon-font-margin: 0 4px 3px 0
+                                        );
+                                    }
+
+                                    .twitter {
+                                        height: 35px;
+                                        color: @color-white;
+                                        padding-right: @indent__s;
+                                        .lib-icon-font(
+                                            @icon-twitter,
+                                            @_icon-font: @font-family__porto-icons,
+                                            @_icon-font-size: 31px,
+                                            @_icon-font-margin: 0 4px 3px 0
+                                        );
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .copyright {
+                background-color: @color-light-green;
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .footer-ul {
+        width: 25%;
+        padding: 0 @indent__s;
+        min-width: 250px;
+
+        &:nth-child(1) {
+            order: 0;
+        }
+
+        &:nth-child(2) {
+            order: 1;
+        }
+
+        &:nth-child(3) {
+            order: 3;
+            padding-right: 0;
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .testtask-index-display {
+        .page-wrapper {
+            .page-footer {
+                .footer {
+                    .lib-vendor-prefix-flex-wrap();
+
+                    .block {
+                        .content {
+                            ul {
+                                padding-right: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+    .testtask-index-display {
+        .page-wrapper {
+            .page-footer {
+                .footer {
+                    .footer-ul {
+                        max-width: 200px;
+                        min-width: 200px;
+                    }
+                }
+            }
+        }
+    }
+}

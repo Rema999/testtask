@@ -1,0 +1,74 @@
+& when (@media-common = true) {
+    .slider {
+        z-index: 9;
+        width: 1024px;
+        height: 40px;
+        overflow: hidden;
+        margin: 0 0 7px;
+
+        .nav {
+            display: none;
+        }
+
+        ul {
+            width: 9999px;
+            .lib-vendor-prefix-display();
+
+            li {
+                list-style-type: none;
+                .lib-vendor-prefix-display();
+                height: 33px;
+                padding: 0;
+                margin: 0;
+
+                img {
+                    padding-right: @indent__l;
+
+                    &:nth-child(1) {
+                        padding-left: @indent__base;
+                    }
+
+                    &:nth-child(5) {
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .testtask-index-display {
+        .slider {
+            display: none;
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .testtask-index-display {
+        .slider {
+            width: 600px;
+
+            ul {
+                li {
+                    height: 35px;
+                }
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+    .testtask-index-display {
+        .slider {
+            width: 1024px;
+
+            ul {
+                li {
+                    height: 33px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,63 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/** @var \Magento\Newsletter\Block\Subscribe $block */
+?>
+<div class="block newsletter">
+    <div class="title"><strong><?= $block->escapeHtml(__('Newsletter')) ?></strong></div>
+    <div class="content">
+        <ul class="newsletter-ul">
+            <li class="newsletter-li">NIEUWSBRIEF</li>
+            <li class="newsletter-li">
+                <span class="newsletter-span">Wilt u op de hoogte gehouden worden van de nieuwste Technieken &
+                Aanbiedingen op het gebied van Portofoons?
+                </span>
+            </li>
+            <li class="newsletter-li">
+                <form class="form subscribe"
+                      novalidate
+                      action="<?= $block->escapeUrl($block->getFormActionUrl()) ?>"
+                      method="post"
+                      data-mage-init='{"validation": {"errorClass": "mage-error"}}'
+                      id="newsletter-validate-detail">
+                    <div class="field newsletter">
+                        <div class="control">
+                            <label for="newsletter">
+                        <span class="label">
+                            <?= $block->escapeHtml(__('Sign Up for Our Newsletter:')) ?>
+                        </span>
+                                <input name="email" type="email" id="newsletter"
+                                       placeholder="<?= $block->escapeHtmlAttr(__('uw emailadres...')) ?>"
+                                       data-mage-init='{"mage/trim-input":{}}'
+                                       data-validate="{required:true, 'validate-email':true}"
+                                />
+                                <span class="mail"></span>
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </li>
+            <li class="newsletter-social" id="slider">
+                <img src="<?php echo $block->getUrl("pub/media/myfolder/")?>little-smart.png" class="newsletter-img"/>
+                <a target="_blank" href="https://www.facebook.com/">
+                    <span class="facebook"></span>
+                </a>
+                <a target="_blank" href="https://twitter.com/">
+                    <span class="twitter"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<script type="text/x-magento-init">
+    {
+        "#slider": {
+            "Magento_Newsletter/js/slider": {
+
+            }
+        }
+    }
+</script>

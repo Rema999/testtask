@@ -1,0 +1,35 @@
+//
+//  Mixins
+//  _____________________________________________
+
+.font-face(
+    @family-name,
+    @font-path,
+    @font-format: false,
+    @font-weight: normal,
+    @font-style: normal,
+    @font-display: auto
+) when (@font-format = false) {
+    @font-face {
+        font-family: @family-name;
+        src: url('@{font-path}.eot');
+        src: url('@{font-path}.eot?#iefix') format('embedded-opentype'),
+        url('@{font-path}.woff') format('woff'),
+        url('@{font-path}.woff2') format('woff2'),
+        url('@{font-path}.ttf') format('truetype');
+        font-weight: @font-weight;
+        font-style: @font-style;
+        font-display: @font-display;
+    }
+}
+
+//
+//  Global Styling
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .font-face(
+        @family-name: 'porto-icons',
+        @font-path: '@{baseDir}fonts/fontello/font/porto-icons'
+    );
+}
